@@ -1,139 +1,149 @@
 import 'package:flutter/material.dart';
 
-import 'hybrid_checkbox.dart';
 import 'styles/styles.dart';
-import 'types/selected_item_string_value_type.dart';
 
+/// Library to create a customizable expansion tile with animated behavior.
+///
+/// This widget provides a collapsible tile that expands and collapses
+/// smoothly to show or hide custom content. It includes configurable
+/// styles, animation duration, border behavior and content padding.
+///
+/// [author] Daniela Perez
+/// [module] HybridExpansionTile
+/// [version] 1.0.1
 class HybridExpansionTile extends StatefulWidget {
+  // TITLE
   final String title;
-  final TextStyle? style;
-  final Duration animationsDuration;
-  final Color expandedBorderColor;
-  final bool hasExpandedHardEdge;
+  final TextStyle? styleTitle;
+  final Color backgroundTileColor;
+
+  // CONTENT
+  final Widget? content;
   final EdgeInsets contentPadding;
-  final Widget? child;
 
-  const HybridExpansionTile(
-      {super.key,
-      required this.title,
-      this.style,
-      required this.child,
-      this.hasExpandedHardEdge = false,
-      this.contentPadding = const EdgeInsets.all(16),
-      this.animationsDuration = const Duration(milliseconds: 200),
-      this.expandedBorderColor = Styles.black});
+  // ICON
+  final IconData icon;
+  final Color iconColor;
 
-  static HybridExpansionTile checkboxChildren<T>({
-    required String title,
-    TextStyle? style,
-    required Map<T, bool> values,
-    Duration animationsDuration = const Duration(milliseconds: 150),
-    SelectedItemStringValue<T>? itemText,
-    ValueChanged<T>? onChanged,
-  }) {
-    return HybridExpansionTile(
-      title: title,
-      style: style,
-      hasExpandedHardEdge: true,
-      animationsDuration: animationsDuration,
-      expandedBorderColor: Styles.black,
-      contentPadding: EdgeInsets.symmetric(vertical: 8),
-      child: ListView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: values.length,
-        itemBuilder: (context, index) {
-          return _checkboxListTile(values, index, onChanged, itemText, context);
-        },
-      ),
-    );
-  }
+  // ANIMATION DURATION
+  final Duration animationsDuration;
 
-  static Material _checkboxListTile<T>(
-    Map<dynamic, bool> values,
-    int index,
-    ValueChanged<T>? onChanged,
-    SelectedItemStringValue<T>? itemText,
-    BuildContext context,
-  ) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () {
-          final key = values.keys.elementAt(index);
-          onChanged?.call(key);
-        },
-        child: Padding(
-          padding: EdgeInsets.only(left: 10, right: 16, top: 2, bottom: 2),
-          child: Row(
-            spacing: 10,
-            children: [
-              HybridCheckbox(
-                value: values.values.elementAt(index),
-                automaticChange: false,
-                onChanged: (value) {
-                  final key = values.keys.elementAt(index);
-                  onChanged?.call(key);
-                },
-              ),
-              Text(
-                itemText?.call(values.keys.elementAt(index)) ?? values.keys.elementAt(index).toString(),
-                style: TextTheme.of(context).bodyMedium,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  // CONTAINER
+  final bool hasExpandedHardEdge;
+  final Color expandedBorderColor;
+  final double borderRadius;
+
+  /// CONSTRUCTOR
+  const HybridExpansionTile({
+    super.key,
+
+    // TITLE
+    required this.title,
+
+    // TITLE TEXT STYLE
+    this.styleTitle,
+
+    // TILE BACKGROUND COLOR
+    this.backgroundTileColor = Styles.grayLight,
+
+    // CONTENT
+    required this.content,
+
+    // CONTENT PADDING
+    this.contentPadding = const EdgeInsets.all(16),
+
+    // ICON
+    this.icon = Icons.keyboard_arrow_up_outlined,
+
+    // ICON COLOR
+    this.iconColor = Styles.black,
+
+    // ANIMATION DURATION
+    this.animationsDuration = const Duration(milliseconds: 200),
+
+    // EXPANDED HARD EDGE
+    this.hasExpandedHardEdge = false,
+
+    // EXPANDED BORDER COLOR
+    this.expandedBorderColor = Styles.grayLight,
+
+    // BORDER RADIUS
+    this.borderRadius = 6,
+  });
 
   @override
   State<HybridExpansionTile> createState() => _CustomExpansionTileState();
 }
 
 class _CustomExpansionTileState extends State<HybridExpansionTile> {
+  /// EXPANSION STATE
   bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: widget.animationsDuration,
+
+      /// CONTAINER DECORATION
+      ///
+      /// Applies animated border color changes based on expansion state.
       decoration: BoxDecoration(
         color: Colors.transparent,
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(widget.borderRadius),
         border: Border.all(
           color: _isExpanded ? widget.expandedBorderColor : Theme.of(context).scaffoldBackgroundColor,
           width: 1,
         ),
       ),
+
+      /// TILE STRUCTURE
+      ///
+      /// Main tile + expandable child content.
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: [_mainTile(), _childTile()],
+        children: [
+          _mainTile(),
+          _childTile(),
+        ],
       ),
     );
   }
 
+  /// BUILDS THE MAIN (HEADER) TILE
+  ///
+  /// This tile is always visible and reacts to taps to toggle
+  /// the expanded state.
   Widget _mainTile() {
     return Material(
-      color: Styles.grayLight,
+      color: widget.backgroundTileColor,
+
+      /// SHAPE CONFIGURATION
+      ///
+      /// Adjusts border radius based on expanded state and hard edge option.
       shape: RoundedRectangleBorder(
         borderRadius: widget.hasExpandedHardEdge
             ? BorderRadius.vertical(
-                top: Radius.circular(6),
-                bottom: _isExpanded ? Radius.zero : Radius.circular(6),
+                top: Radius.circular(widget.borderRadius - 1),
+                bottom: _isExpanded ? Radius.zero : Radius.circular(widget.borderRadius),
               )
-            : BorderRadius.circular(6),
+            : BorderRadius.circular(widget.borderRadius - 1),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Ink(
         decoration: BoxDecoration(
           border: widget.hasExpandedHardEdge
               ? Border(
-                  bottom: _isExpanded ? BorderSide(color: widget.expandedBorderColor, width: 1) : BorderSide.none,
+                  bottom: _isExpanded
+                      ? BorderSide(
+                          color: widget.expandedBorderColor,
+                          width: 1,
+                        )
+                      : BorderSide.none,
                 )
               : null,
         ),
         child: InkWell(
+          /// TOGGLE EXPANSION
           onTap: () {
             setState(() {
               _isExpanded = !_isExpanded;
@@ -143,11 +153,15 @@ class _CustomExpansionTileState extends State<HybridExpansionTile> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Row(
               children: [
+                /// TITLE TEXT
                 Text(
                   widget.title,
-                  style: widget.style,
+                  style: widget.styleTitle,
                 ),
-                Spacer(),
+
+                const Spacer(),
+
+                /// TRAILING ICON
                 _trailingIcon(),
               ],
             ),
@@ -157,14 +171,24 @@ class _CustomExpansionTileState extends State<HybridExpansionTile> {
     );
   }
 
+  /// BUILDS THE TRAILING ICON
+  ///
+  /// Rotates the arrow icon depending on expansion state.
   AnimatedRotation _trailingIcon() {
     return AnimatedRotation(
       turns: _isExpanded ? 0 : 0.5,
       duration: widget.animationsDuration,
-      child: Icon(Icons.keyboard_arrow_up_outlined, color: Styles.black),
+      child: Icon(
+        widget.icon,
+        color: widget.iconColor,
+      ),
     );
   }
 
+  /// BUILDS THE EXPANDABLE CHILD CONTENT
+  ///
+  /// Uses AnimatedSwitcher + SizeTransition to smoothly
+  /// show or hide the content.
   Widget _childTile() {
     return AnimatedSwitcher(
       duration: widget.animationsDuration,
@@ -175,7 +199,12 @@ class _CustomExpansionTileState extends State<HybridExpansionTile> {
           child: child,
         );
       },
-      child: _isExpanded ? Padding(padding: widget.contentPadding, child: widget.child) : const SizedBox.shrink(),
+      child: _isExpanded
+          ? Padding(
+              padding: widget.contentPadding,
+              child: widget.content,
+            )
+          : const SizedBox.shrink(),
     );
   }
 }

@@ -1,0 +1,41 @@
+name: flutter_archetype
+description: A clean architecture Flutter project template ready for production.
+publish_to: "none"
+
+version: 1.0.9+2
+
+environment:
+  sdk: ">=3.5.3 <4.0.0"
+
+dependencies:
+  # Core Flutter packages
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # UI and icons
+  cupertino_icons: ^1.0.8
+
+  # Internationalization
+  easy_localization: ^3.0.8
+
+  # Animations
+  flutter_animate: ^4.5.2
+
+  hybrid_expansion_tile:
+    path: /Users/danielaperezjuan/Documents/GitHub/hybrid-expansion-tile
+
+dev_dependencies:
+  # Testing
+  flutter_test:
+    sdk: flutter
+
+  # Linting
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - lib/core/assets/i18n/
