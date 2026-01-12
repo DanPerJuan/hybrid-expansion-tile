@@ -1,8 +1,10 @@
 name: hybrid_expansion_tile
 description: HybridExpansionTile widget allows creating customized ExpansionTile with various properties like padding, colors, icons, titles, and more.
-version: 1.0.0
+version: 1.0.1
 homepage: https://rudo.es/
 repository: https://github.com/rudoapps/hybrid-expansion-tile.git
+issue_tracker: https://github.com/rudoapps/hybrid-expansion-tile/issues
+documentation: https://github.com/rudoapps/hybrid-expansion-tile#readme
 topics:
   - expansiontile
 

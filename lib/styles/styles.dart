@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Styles {
-  // PRIMARY FONT FAMILY
+  /// PRIMARY FONT FAMILY
   static String primaryFont = 'Lato';
   static String secondaryFont = 'Montserrat';
 
-  // COLORS
+  /// COLORS
   static const Color black = Color(0xFF0A0A1F);
   static const Color white = Color(0xFFFFFFFF);
   static const Color grayLight = Color(0xFFF1F1F4);
@@ -28,23 +28,23 @@ class Styles {
   static const Color warning = Color(0xFFFEC601);
   static const Color warningDark = Color(0xFFD09A0E);
 
-  // FONT SIZES
-  static get fontSizeH1 => 96.0;
-  static get fontSizeH2 => 60.0;
-  static get fontSizeH3 => 48.0;
-  static get fontSizeH4 => 34.0;
-  static get fontSizeH5 => 24.0;
-  static get fontSizeH6 => 20.0;
-  static get fontSizeH7 => 18.0;
-  static get fontSizesSubtitle => 18.0;
-  static get fontSizesBody => 16.0;
-  static get fontSizesButton => 18.0;
-  static get fontSizesCaption => 16.0;
-  static get fontSizesOverline => 10.0;
-  static get fontSizesIcon => 24.0;
+  /// FONT SIZES
+  static double get fontSizeH1 => 96.0;
+  static double get fontSizeH2 => 60.0;
+  static double get fontSizeH3 => 48.0;
+  static double get fontSizeH4 => 34.0;
+  static double get fontSizeH5 => 24.0;
+  static double get fontSizeH6 => 20.0;
+  static double get fontSizeH7 => 18.0;
+  static double get fontSizesSubtitle => 18.0;
+  static double get fontSizesBody => 16.0;
+  static double get fontSizesButton => 18.0;
+  static double get fontSizesCaption => 16.0;
+  static double get fontSizesOverline => 10.0;
+  static double get fontSizesIcon => 24.0;
 
-  // TEXTSTYLES
-  // AppBar
+  /// TEXTSTYLES
+  /// AppBar
   static TextStyle get appBar => GoogleFonts.getFont(
     primaryFont,
     color: black,
@@ -52,7 +52,8 @@ class Styles {
     fontWeight: FontWeight.w700,
     fontStyle: FontStyle.normal,
   );
-  // Primary title
+
+  /// Primary title
   static TextStyle get primaryTitle => GoogleFonts.getFont(
     primaryFont,
     color: black,
@@ -60,7 +61,8 @@ class Styles {
     fontWeight: FontWeight.w700,
     fontStyle: FontStyle.normal,
   );
-  // Secondary title
+
+  /// Secondary title
   static TextStyle get secondaryTitle => GoogleFonts.getFont(
     secondaryFont,
     color: white,
@@ -68,7 +70,8 @@ class Styles {
     fontWeight: FontWeight.w700,
     fontStyle: FontStyle.normal,
   );
-  // Footer
+
+  /// Footer
   static TextStyle get footer => GoogleFonts.getFont(
     primaryFont,
     color: white,
@@ -77,7 +80,7 @@ class Styles {
     fontStyle: FontStyle.normal,
   );
 
-  // Tittle CustomTile
+  /// Tittle CustomTile
   static TextStyle get titleTile => GoogleFonts.getFont(
     primaryFont,
     color: black,
@@ -86,7 +89,7 @@ class Styles {
     fontStyle: FontStyle.normal,
   );
 
-  // Tittle CustomTile
+  /// Tittle CustomTile
   static TextStyle get subtitleTile => GoogleFonts.getFont(
     primaryFont,
     color: therciary,
@@ -95,7 +98,7 @@ class Styles {
     fontStyle: FontStyle.normal,
   );
 
-  // Caption CustomTile
+  /// Caption CustomTile
   static TextStyle get caption => GoogleFonts.getFont(
     primaryFont,
     color: therciary,
@@ -104,7 +107,7 @@ class Styles {
     fontStyle: FontStyle.normal,
   );
 
-  // OutlinedBall CustomTile
+  /// OutlinedBall CustomTile
   static TextStyle get outlinedBall => GoogleFonts.getFont(
     primaryFont,
     color: black,
@@ -113,7 +116,7 @@ class Styles {
     fontStyle: FontStyle.normal,
   );
 
-  // FilledBall CustomTile
+  /// FilledBall CustomTile
   static TextStyle get filledBall => GoogleFonts.getFont(
     primaryFont,
     color: white,

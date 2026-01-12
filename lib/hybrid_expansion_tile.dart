@@ -12,23 +12,23 @@ import 'styles/styles.dart';
 /// [module] HybridExpansionTile
 /// [version] 1.0.1
 class HybridExpansionTile extends StatefulWidget {
-  // TITLE
+  /// TITLE
   final String title;
   final TextStyle? styleTitle;
   final Color backgroundTileColor;
 
-  // CONTENT
+  /// CONTENT
   final Widget? content;
   final EdgeInsets contentPadding;
 
-  // ICON
+  /// ICON
   final IconData icon;
   final Color iconColor;
 
-  // ANIMATION DURATION
+  /// ANIMATION DURATION
   final Duration animationsDuration;
 
-  // CONTAINER
+  /// CONTAINER
   final bool hasExpandedHardEdge;
   final Color expandedBorderColor;
   final double borderRadius;
@@ -37,37 +37,37 @@ class HybridExpansionTile extends StatefulWidget {
   const HybridExpansionTile({
     super.key,
 
-    // TITLE
+    /// TITLE
     required this.title,
 
-    // TITLE TEXT STYLE
+    /// TITLE TEXT STYLE
     this.styleTitle,
 
-    // TILE BACKGROUND COLOR
+    /// TILE BACKGROUND COLOR
     this.backgroundTileColor = Styles.grayLight,
 
-    // CONTENT
+    /// CONTENT
     required this.content,
 
-    // CONTENT PADDING
+    /// CONTENT PADDING
     this.contentPadding = const EdgeInsets.all(16),
 
-    // ICON
+    /// ICON
     this.icon = Icons.keyboard_arrow_up_outlined,
 
-    // ICON COLOR
+    /// ICON COLOR
     this.iconColor = Styles.black,
 
-    // ANIMATION DURATION
+    /// ANIMATION DURATION
     this.animationsDuration = const Duration(milliseconds: 200),
 
-    // EXPANDED HARD EDGE
+    /// EXPANDED HARD EDGE
     this.hasExpandedHardEdge = false,
 
-    // EXPANDED BORDER COLOR
+    /// EXPANDED BORDER COLOR
     this.expandedBorderColor = Styles.grayLight,
 
-    // BORDER RADIUS
+    /// BORDER RADIUS
     this.borderRadius = 6,
   });
 
