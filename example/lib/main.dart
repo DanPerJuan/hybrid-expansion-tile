@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -25,12 +24,6 @@ Future<void> _initialize() async {
 
   /// Set system UI mode
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-
-  /// Initialize EasyLocalization
-  await EasyLocalization.ensureInitialized();
-
-  /// Disable EasyLocalization logging
-  EasyLocalization.logger.enableBuildModes = [];
 
   /// Restart animations on hot reload
   Animate.restartOnHotReload = true;
