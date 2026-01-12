@@ -19,7 +19,7 @@ The Widget consists of **4 parts**:
 
 ## EXAMPLES
 
-### Example 1:
+### Example 1: Change tile, styleText and colors
 
 <img src="https://raw.githubusercontent.com/rudoapps/hybrid-hub-vault/main/flutter/images/hybrid-expansion-tile/Example1.png" width="600" alt="Example 1">
 
@@ -46,7 +46,7 @@ The Widget consists of **4 parts**:
 )
 ```
 
-### Example 2:
+### Example 2: Change border, expanded hard edge, colors and icon
 
 <img src="https://raw.githubusercontent.com/rudoapps/hybrid-hub-vault/main/flutter/images/hybrid-expansion-tile/Example2.png" width="600" alt="Example 2">
 
@@ -94,7 +94,7 @@ HybridExpansionTile(
 )
 ```
 
-### Example 3
+### Example 3: Add more widgets and change colors
 
 <img src="https://raw.githubusercontent.com/rudoapps/hybrid-hub-vault/main/flutter/images/hybrid-expansion-tile/Example3.png" width="600" alt="Example 3">
 
