@@ -17,9 +17,6 @@ dependencies:
   # UI and icons
   cupertino_icons: ^1.0.8
 
-  # Internationalization
-  easy_localization: ^3.0.8
-
   # Animations
   flutter_animate: ^4.5.2
 
@@ -31,11 +28,5 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # Linting
-  flutter_lints: ^6.0.0
-
 flutter:
   uses-material-design: true
-
-  assets:
-    - lib/core/assets/i18n/
