@@ -43,37 +43,82 @@ class Styles {
   static get fontSizesOverline => 10.0;
   static get fontSizesIcon => 24.0;
 
-// TEXTSTYLES
+  // TEXTSTYLES
   // AppBar
-  static TextStyle get appBar => GoogleFonts.getFont(primaryFont,
-      color: black, fontSize: 20, fontWeight: FontWeight.w700, fontStyle: FontStyle.normal);
+  static TextStyle get appBar => GoogleFonts.getFont(
+    primaryFont,
+    color: black,
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+  );
   // Primary title
-  static TextStyle get primaryTitle => GoogleFonts.getFont(primaryFont,
-      color: black, fontSize: 34, fontWeight: FontWeight.w700, fontStyle: FontStyle.normal);
+  static TextStyle get primaryTitle => GoogleFonts.getFont(
+    primaryFont,
+    color: black,
+    fontSize: 34,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+  );
   // Secondary title
-  static TextStyle get secondaryTitle => GoogleFonts.getFont(secondaryFont,
-      color: white, fontSize: 34, fontWeight: FontWeight.w700, fontStyle: FontStyle.normal);
+  static TextStyle get secondaryTitle => GoogleFonts.getFont(
+    secondaryFont,
+    color: white,
+    fontSize: 34,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+  );
   // Footer
-  static TextStyle get footer => GoogleFonts.getFont(primaryFont,
-      color: white, fontSize: 15, fontWeight: FontWeight.w700, fontStyle: FontStyle.normal);
+  static TextStyle get footer => GoogleFonts.getFont(
+    primaryFont,
+    color: white,
+    fontSize: 15,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+  );
 
   // Tittle CustomTile
-  static TextStyle get titleTile => GoogleFonts.getFont(primaryFont,
-      color: black, fontSize: fontSizeH6, fontWeight: FontWeight.w400, fontStyle: FontStyle.normal);
+  static TextStyle get titleTile => GoogleFonts.getFont(
+    primaryFont,
+    color: black,
+    fontSize: fontSizeH6,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
 
   // Tittle CustomTile
-  static TextStyle get subtitleTile => GoogleFonts.getFont(primaryFont,
-      color: therciary, fontSize: fontSizesSubtitle, fontWeight: FontWeight.w400, fontStyle: FontStyle.normal);
+  static TextStyle get subtitleTile => GoogleFonts.getFont(
+    primaryFont,
+    color: therciary,
+    fontSize: fontSizesSubtitle,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
 
   // Caption CustomTile
-  static TextStyle get caption => GoogleFonts.getFont(primaryFont,
-      color: therciary, fontSize: fontSizesCaption, fontWeight: FontWeight.w400, fontStyle: FontStyle.normal);
+  static TextStyle get caption => GoogleFonts.getFont(
+    primaryFont,
+    color: therciary,
+    fontSize: fontSizesCaption,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
 
   // OutlinedBall CustomTile
-  static TextStyle get outlinedBall => GoogleFonts.getFont(primaryFont,
-      color: black, fontSize: fontSizeH7, fontWeight: FontWeight.w400, fontStyle: FontStyle.normal);
+  static TextStyle get outlinedBall => GoogleFonts.getFont(
+    primaryFont,
+    color: black,
+    fontSize: fontSizeH7,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
 
   // FilledBall CustomTile
-  static TextStyle get filledBall => GoogleFonts.getFont(primaryFont,
-      color: white, fontSize: fontSizeH6, fontWeight: FontWeight.w400, fontStyle: FontStyle.normal);
+  static TextStyle get filledBall => GoogleFonts.getFont(
+    primaryFont,
+    color: white,
+    fontSize: fontSizeH6,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
 }

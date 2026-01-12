@@ -152,7 +152,7 @@ Container(
 
 ## Author ✒️
 
-- **Daniela Perez Juan** - _Flutter Developer_ - [danielaperez@rudo.es](danielaperez@rudo.es)
+- **Daniela Perez Juan** - _Flutter Developer_ - [dperez@laberit.com](dperez@laberit.com)
 
 ---
 
